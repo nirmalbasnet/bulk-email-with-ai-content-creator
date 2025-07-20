@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsc",
+    "build": "tsc --build && tsc-alias",
     "start": "node dist/index.js"
   },
   "dependencies": {
@@ -18,7 +18,8 @@
     "fastify": "^5.3.3",
     "fastify-plugin": "^5.0.1",
     "nodemailer": "^7.0.3",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "tsc-alias": "^1.8.16"
   },
   "devDependencies": {
     "@fastify/swagger": "^9.5.1",

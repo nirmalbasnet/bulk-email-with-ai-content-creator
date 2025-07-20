@@ -9,14 +9,12 @@
     "removeComments": true,
     "moduleResolution": "nodenext",
     "module": "NodeNext",
-		"baseUrl": "src",
-		"paths": {
-			"*": ["*"]
-		} 
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["*"]
+    }
   },
-  "include": [
-    "src/**/*"
-  ],
+  "include": ["src/**/*"],
   "exclude": [
     "node_modules",
     "test/**/*",

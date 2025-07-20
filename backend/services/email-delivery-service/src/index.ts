@@ -6,12 +6,15 @@ import "./utils/loadEnv";
 
 const server = fastify();
 
-// Autoload plugins
-server.register(autoload, {
-  dir: path.join(__dirname, "plugins"),
-  options: {}, // options passed to each plugin
-  autoHooks: true, // optional: will auto-load files like onRequest.ts, onSend.ts, etc.
-});
+// Autoload plugins for dev env
+
+if (process.env.NODE_ENV !== "production") {
+  server.register(autoload, {
+    dir: path.join(__dirname, "plugins/dev"),
+    options: {}, // options passed to each plugin
+    autoHooks: true, // optional: will auto-load files like onRequest.ts, onSend.ts, etc.
+  });
+}
 
 // Autoload routes
 server.register(autoload, {
@@ -19,7 +22,7 @@ server.register(autoload, {
   dirNameRoutePrefix: true,
 });
 
-server.listen({ port: 8080 }, (err, address) => {
+server.listen({ port: 8080, host: "0.0.0.0" }, (err, address) => {
   if (err) {
     console.log("Server exited with error ::", err);
     process.exit(1);

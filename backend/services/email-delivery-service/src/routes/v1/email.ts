@@ -1,6 +1,6 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
 
-import EmailSchema from "schema/emailSchema";
+import EmailSchema from "schema/EmailSchema";
 import * as sendEmailController from "controllers/sendEmailController";
 
 const routes = async (fastify: FastifyInstance) => {
