@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "allowJs": false,
+    "target": "esnext",
+    "strictNullChecks": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "moduleResolution": "nodenext",
+    "module": "NodeNext",
+		"baseUrl": "src",
+		"paths": {
+			"*": ["*"]
+		} 
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "test/**/*",
+    "dist/**/*",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ]
+}
