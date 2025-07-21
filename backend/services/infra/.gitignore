@@ -1,0 +1,32 @@
+.env
+
+# Local Terraform state
+*.tfstate
+*.tfstate.backup
+
+# Crash log files
+crash.log
+
+# Terraform plan output
+*.tfplan
+
+# Terraform variable overrides
+*.tfvars
+*.tfvars.json
+
+# Sensitive files
+secrets.tf
+secret.tfvars
+
+# .terraform folder (local module and provider cache)
+.terraform/
+
+# Override files (local-only configurations)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore Terraform logs
+.terraform.log
+
