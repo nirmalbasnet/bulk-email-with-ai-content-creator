@@ -1,0 +1,35 @@
+services:
+  compose:
+    image: 'nginx:alpine'
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./index.html:/usr/share/nginx/html/index.html:ro
+    depends_on:
+      - delivery
+      - campaign
+    networks:
+      - email-campaign
+
+  delivery:
+    build:
+      context: '../email-delivery-service'
+    expose:
+      - 8080
+    networks:
+      - email-campaign
+
+  campaign:
+    build:
+      context: '../email-campaign-service'
+    expose:
+      - 3000
+    networks:
+      - email-campaign
+
+networks:
+  email-campaign:
+    driver: 'bridge'
+
+
